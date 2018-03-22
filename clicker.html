@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Symulator soplcy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="Stylesheet" type="text/css" href="clicker.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="Shortcut icon" href="http://starcolony.com/sc/favicon.ico">
+    <link rel="icon" href="http://starcolony.com/sc/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+</head>
+<body bgcolor="#202020">
+    <div class="w3-panel w3-green">
+        <span onclick="this.parentElement.style.display='none'" class="w3-closebtn">&times;</span>
+        <center>
+            <h1>SYMULATOR SOPLICY</h1>
+            <h3>Info!</h3>
+            <p>Zapraszamy na forum sieci serwerów <a href="http://cs-soplica.com/">cs-soplica.com</a>.<br> Z nami gra się lepiej.<br><br>
+                <h3>Zasady:</h3>
+        </center>
+        <ol>
+            <li>Pracuj dla LOSTA</li>
+            <li>Zbieraj Respect</li>
+            <li>Awansuj w hierarch sieci</li>
+            <li>Nie próbuj awansować zbyt szybko bo stracisz respect</li>
+            <li>Zbieraj dodatki i rangi do Soplicy</li>
+            <li>Zostań h@ sieci i wykop Losta</li>
+        </ol>
+        </p>
+    </div>
+    <center>
+        <a href="http://cs-soplica.com/" target="_blank"><img src="http://cs-soplica.com/public/style_images/logo2.png"></a>
+        <div id="ress">
+            <h1>Respect:
+                <p id="aka">0</p>
+            </h1>
+        </div>
+        <button id="start" onclick="clic()" class="w3-btn w3-hover-blue w3-xxlarge">PRACUJ</button>
+        <button id='auto0' onclick='auto0()' style="display: none" class="w3-btn w3-hover-blue w3-xxlarge"></button>
+        <button id='razy' onclick='clic2()' style="display: none" class="w3-btn w3-hover-blue w3-xxlarge">PRACUJ x2</button>
+        <button id='razy4' onclick='clic3()' style="display: none" class="w3-btn w3-hover-blue w3-xxlarge">PRACUJ x4</button>
+        <button id='razy10' onclick='clic4()' style="display: none" class="w3-btn w3-hover-blue w3-xxlarge">PRACUJ x10</button>
+        <button id='razy40' onclick='clic5()' style="display: none" class="w3-btn w3-hover-blue w3-xxlarge">PRACUJ x40</button><br><br></center>
+    <h2>Dodatki: <img src="http://www.wojna.com.pl/grafiki/produkty/zogorka/ogorki_konserwowe_1700.png" id="img" height="90px"> <br></h2>
+    <center>
+        <button id='auto' onclick='auto()' style="display: none" class="w3-btn w3-blue w3-border">Auto praca 1/sec</button><br>
+        <button id='plus' onclick='plus()' style="display: none" class="w3-btn w3-blue w3-border">Rejestracja +1000</button><br>
+        <button id='plus2' onclick='plus2()' style="display: none" class="w3-btn w3-blue w3-border">Awans na Gamera +2000</button><br>
+        <button id='plus3' onclick='plus3()' style="display: none" class="w3-btn w3-blue w3-border">Awans na Grafika +5000</button><br>
+        <button id='plus7' onclick='plus7()' style="display: none" class="w3-btn w3-blue w3-border">Lost Cię pochwalił</button><br>
+        <button id='plus4' onclick='plus4()' style="display: none" class="w3-btn w3-blue w3-border">Awans na Uploadera +10000</button><br>
+        <button id='minus1' onclick='minus1()' style="display: none" class="w3-btn w3-blue w3-border">Nieodpowiednie osoby na Adminie Technicznym</button><br>
+        <button id='plus5' onclick='plus5()' style="display: none" class="w3-btn w3-blue w3-border">Nowy styl forum</button><br>
+        <button id='minus2' onclick='minus2()' style="display: none" class="w3-btn w3-blue w3-border">Degradacja niektórych osób</button><br>
+        <button id='plus6' onclick='plus6()' style="display: none" class="w3-btn w3-blue w3-border">Wykupienie UNBANA</button><br>
+        <button id='plus8' onclick='plus8()' style="display: none" class="w3-btn w3-blue w3-border">Awans na Zasłużonego</button><br>
+    </center>
+    <br>
+    <h2>Sklep: <img src="http://www.sklep.prostozpalety.pl/environment/cache/images/500_500_productGfx_7e8b711170b3f2f7d10cba6d726061e6.jpg" id="img" height="100px"><br></h2>
+    <center>
+        <button id='auto1' onclick='auto1()' style="display: none"></button>
+        <button id='admin' onclick='admin()' disabled class="w3-btn w3-blue w3-border">Awans na Młodszego Admina Serwera - 1.5/sec - 1500</button><br>
+        <button id='auto2' onclick='auto2()' style="display: none"></button>
+        <button id='admin2' onclick='admin2()' disabled class="w3-btn w3-blue w3-border">Awans na Admina Serwera - 2/sec - 2000</button><br>
+        <button id='auto3' onclick='auto3()' style="display: none"></button>
+        <button id='admin3' onclick='admin3()' disabled class="w3-btn w3-blue w3-border">Awans na Starszego Admina serwera - 3/sec - 3500</button><br>
+        <button id='auto4' onclick='auto4()' style="display: none"></button>
+        <button id='admin4' onclick='admin4()' disabled class="w3-btn w3-blue w3-border">Awans na j@ Serwera - 4.5/sec - 5500</button><br>
+        <button id='sklepp1' onclick='sklepp1()' style="display: none"></button>
+        <button id='sklep1' onclick='sklep1()' disabled class="w3-btn w3-blue w3-border">Otwarcie nowego serwera - 6/sec - 7000</button><br>
+        <button id='auto5' onclick='auto5()' style="display: none"></button>
+        <button id='admin5' onclick='admin5()' disabled class="w3-btn w3-blue w3-border">Awans na Opiekuna Serwera - 8/sec - 10000</button><br>
+        <button id='auto6' onclick='auto6()' style="display: none"></button>
+        <button id='admin6' onclick='admin6()' disabled class="w3-btn w3-blue w3-border">Awans na Moderatora - 12/sec - 15000</button><br>
+        <button id='auto7' onclick='auto7()' style="display: none"></button>
+        <button id='admin7' onclick='admin7()' disabled class="w3-btn w3-blue w3-border">Awans na Admina Technicznego - 17/sec - 25000</button><br>
+        <button id='sklepp3' onclick='sklepp3()' style="display: none"></button>
+        <button id='sklep3' onclick='sklep3()' disabled class="w3-btn w3-blue w3-border">Wykup V.I.P - 20/sec - 32000</button><br>
+        <button id='auto8' onclick='auto8()' style="display: none"></button>
+        <button id='admin8' onclick='admin8()' disabled class="w3-btn w3-blue w3-border">Awans na Admina Forum - 27/sec - 40000</button><br>
+        <button id='sklepp4' onclick='sklepp4()' style="display: none"></button>
+        <button id='sklep4' onclick='sklep4()' disabled class="w3-btn w3-blue w3-border">Wykup Premium - 35/sec - 50000</button><br>
+        <button id='auto9' onclick='auto9()' style="display: none"></button>
+        <button id='admin9' onclick='admin9()' disabled class="w3-btn w3-blue w3-border">Awans na Junior Admina Sieci - 40/sec - 60000</button><br>
+        <button id='auto10' onclick='auto10()' style="display: none"></button>
+        <button id='admin10' onclick='admin10()' disabled class="w3-btn w3-blue w3-border">Awans na Admina Sieci - 60/sec - 90000</button><br>
+        <button id='sklepp5' onclick='sklepp5()' style="display: none"></button>
+        <button id='sklep5' onclick='sklep5()' disabled class="w3-btn w3-blue w3-border">Przejej $ Lostowi + Donator - 70/sec - 500000</button><br>
+        <button id='sklepp2' onclick='sklepp2()' style="display: none"></button>
+        <button id='sklep2' onclick='sklep2()' disabled class="w3-btn w3-blue w3-border">Wykupienie innej sieci - 80/sec - 1200000</button><br>
+        <button id='auto11' onclick='auto11()' style="display: none"></button>
+        <button id='admin11' onclick='admin11()' disabled class="w3-btn w3-blue w3-border">Awans na Head Admina Sieci - 100/sec - 1500000</button><br>
+    </center><br>
+
+    <h2>Osiągnięcia: <img src="https://swiatkierowcy.pl/public/assets/Alkomat/CA9000/CA9000_professional_S_06.png" id="img" height="100px"></h2>
+    <center>
+        <!-- <img src="http://cs-soplica.com/uploads/images/1455569196-U35137.png" style="display:none" id="img1"><br>
+    <img src="http://cs-soplica.com/uploads/images/1455569196-U35137.png" style="display:none" id="img2"><br>
+    <img src="http://cs-soplica.com/uploads/images/1455569196-U35137.png" style="display:none" id="img3"><br> -->
+        <div id="oso">
+            <img src="http://cs-soplica.com/uploads/images/1455829737-U65809.png" style="display:none" id="img1"><br>
+            <img src="http://www.fancyicons.com/download/?id=1112&t=png&s=256" style="display:none" height="50px" id="img2"><br>
+            <img src="http://cs-soplica.com/uploads/images/1455829676-U65809.png" style="display:none" id="img3"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/moderator.png" style="display:none" id="img4"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/AdminTechniczny.png" style="display:none" id="img5"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/gamercsgo.png" style="display:none" id="img11"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/grafik.png" style="display:none" id="img12"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/Uploader.png" style="display:none" id="img13"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/zasluzony.png" style="display:none" id="img14"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/vip.png" style="display:none" id="img15"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/premium.png" style="display:none" id="img16"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/donator.png" style="display:none" id="img17"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/AdminForum.png" style="display:none" id="img6"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/JuniorAdmin.png" style="display:none" id="img7"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/AdminSieci.png" style="display:none" id="img8"><br>
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/10/17/computer-156951_960_720.png" heigjt="50px" style="display:none" id="img9"><br>
+            <img src="http://cs-soplica.com/public/style_extra/team_icons/HeadAdmin.png" style="display:none" id="img10"><br>
+
+        </div>
+        <footer class="w3-container w3-black">
+            Copyrights &copy by <a href="http://cs-soplica.com/">cs-soplica.com</a>
+        </footer>
+
+    </center>
+    <script src="clicker.js"></script>
+</body>
+
+</html>
